@@ -1,8 +1,8 @@
 # TDD na prática
 
-## Funções do mocha
+### Funções do mocha
 
-### describe 
+#### describe 
 Como o próprio nome já diz, ele descreve o que a o teste irá fazer.
 Então geralmente o primeiro describe que escrevemos é o nome daquela
 classe, pois facilita encontrar mais facilmente. Ele cria um bloco
@@ -23,7 +23,7 @@ describe('main', () => {
   })
 })
 ````
-___
+
 #### context
 Serve para separar os casos que vamos ter de terminado método. Como assim?
 Podemos ter um método A, onde nesse método tenhamos casos onde o valor de uma
@@ -45,7 +45,7 @@ diferentes, por isso usamos o context
   })
 ...
 ````
-___
+
 ##### it
 Para rodar os nossos testes, usamos esse comando, ele que de fato vai executar
 o teste. <br />
@@ -75,11 +75,68 @@ ou
   })
 ...
 ````
-___
+
+<br/>
+
+## Parâmetros
+
 #### Reporters
+
 Utilizando o comando:
 ``
   npm test -- --reporters
 ``
 Será apresentado uma lista de com os possíveis reporters que podemos utilizar.
 Então para utilizar um dos tipos, rodar o comando: ``npm test -- --reporter=nyan``
+
+<br />
+
+
+#### Parâmetro --bail
+
+Comando : `` npm test --bail ``
+
+É um parâmetro que faz com que os testes parem no primeiro caso em que um erro
+for disparado. É útil pelo fato de rodar até o lugar onde quebrou e já ir
+reparando pedaços por pedaços.
+
+<br />
+
+#### Utilizando o parâmetro only
+
+Instrui o Mocha a apenas executar aquele contexto específico e ignorar todo
+o resto.
+
+``
+  context.only('Case A', () => {
+    // faz algo
+  })
+`` 
+<br />
+
+#### Utilizando o parâmetro skip
+
+Instrui o Mocha a pular aquele caso específico que foi marcado com o **skip**.
+Nos logs, mostra como **pending** e com uma colaração diferente dos demais.
+
+
+``
+  it.skip('should happen bla bla ', () => {
+    // faz algo
+  })
+`` 
+<br /><br /><br />
+
+## Hooks
+
+Utilizamos os hooks pelo fato de que cada teste deve ser independente, não
+pode utilizar resultados, informações de outros testes, então os hooks irão
+auxiliar na criação de determinados dados/informações que irão ser utilizado
+no teste que está sendo executado naquele momento. <br />
+São códigos que podem ser executados em algum momento durante a execução dos
+testes, são eles
+
+**before**: executado apenas uma vez antes do block 
+**after**: executado apenas uma vez depois do block
+**beforeEach**: todas as vezes antes de cada block
+**afterEach**: todas as vezes depois de cada block
