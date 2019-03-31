@@ -1,42 +1,43 @@
 describe('Main using hooks', () => {
-
+  // então cria-se uma variável global e essa variável é sempre inicializada pelo beforeEach para cada teste
+  // isso evita de ter que criar as mesmas variáveis em todos os testes
+  let arr;
   // Roda uma vez, antes do bloco
   before(function () {
-    console.log('\tbefore');
+  // criar a conexão com o DB
+  // criar um conjunto de dados
   });
 
   // Roda uma vez, depois do bloco
   after(function () {
-    console.log('\tafter');
+  // fechar a conexão com o DB
+  // apagar esse conjunto de dados
   });
 
   // Roda uma vez, antes de CADA bloco
   beforeEach(function () {
-    console.log('\tbefore each');
+    arr = [1, 2, 3]
   });
 
   // Roda uma vez, depois de CADA bloco
   afterEach(function () {
-    console.log('\tafter each');
+
   });
 
-  it('test 1', function () {
-    console.log('\tRunning test 1');
+  it('should have a size of 4 when push another value to the array', function () {
+    // const arr = [1, 2, 3];
+    arr.push(4);
+    console.log('>', arr.length); // 4
   });
 
-  it('test 2', function () {
-    console.log('\tRunning test 2');
+  it('should have a size of 2 when pop a value from the array', function () {
+    // const arr = [1, 2, 3];
+    arr.pop();
+    console.log('>', arr.length); // 2
   });
+
+  it('should remove value 3 when use pop in the array', () => {
+    // const arr = [1, 2, 3];
+    console.log('>', arr.pop() === 3)
+  })
 });
-
-/*
-* Outputs
-* before
-* before each
-* Running test 1
-* after each
-* before each
-* Running test 2
-* after each
-* after
-* */

@@ -140,3 +140,30 @@ testes, são eles
 **after**: executado apenas uma vez depois do block
 **beforeEach**: todas as vezes antes de cada block
 **afterEach**: todas as vezes depois de cada block
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+P.S.: Todos os teste são executados nos scripts *.spec*, então foi alterado para
+*.test* apenas por questões didáticas e para rodar apenas o teste que estava
+sendo relacionado ao momento. Caso queira ver os outros testes rodando também
+é necessário alterar o *.test* para *.spec*
