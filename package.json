@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint",
-    "test": "./node_modules/.bin/mocha src/intro/tests/**/*.spec.js"
+    "test": "./node_modules/.bin/mocha src/intro/tests/**/*.spec.js",
+    "test:watch": "./node_modules/.bin/mocha src/intro/tests/**/*.spec.js --watch"
   },
   "keywords": [],
   "author": "",
