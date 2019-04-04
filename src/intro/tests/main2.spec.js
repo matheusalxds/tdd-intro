@@ -52,4 +52,8 @@ describe('Main using hooks', () => {
     arr.pop();
     expect(arr).to.not.include(3);
   });
+
+  it('should return true when pop 3 from the array', () => {
+    expect(arr.pop() === 3).to.be.true;
+  })
 });
