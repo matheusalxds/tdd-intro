@@ -143,7 +143,10 @@ testes, são eles
 
 
 
+## Chai
 
+Chai é o cara responsável por dizer se o teste passou ou não, os possíveis
+comando são encontrados [aqui.](https://www.chaijs.com/api/bdd/) 
 
 
 
