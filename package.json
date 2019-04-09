@@ -6,14 +6,16 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint",
-    "test": "./node_modules/.bin/mocha src/intro/tests/**/*.spec.js",
-    "test:watch": "./node_modules/.bin/mocha src/intro/tests/**/*.spec.js --watch"
+    "test": "./node_modules/.bin/mocha src/intro/tests/**/*.spec.js --require babel-register",
+    "test:watch": "./node_modules/.bin/mocha src/intro/tests/**/*.spec.js --require babel-register --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
