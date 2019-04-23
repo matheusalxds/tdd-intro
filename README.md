@@ -146,9 +146,35 @@ testes, são eles
 ## Chai
 
 Chai é o cara responsável por dizer se o teste passou ou não, os possíveis
-comando são encontrados [aqui.](https://www.chaijs.com/api/bdd/) 
+comando são encontrados [aqui.](https://www.chaijs.com/api/bdd/)
+  
+___
 
+## Coverage
 
+### lib nyc
+
+Responsável por cobrir quanto do nosso código está sendo coberto por
+testado. Após adicionado o nyc nas dependências de desenvolvimento e
+rodarmos o código:
+``yarn run test:coverage`` será exibido uma tabela com algumas informações
+mostrando quanto do código foi coberto.
+Também podemos ir um pouco mais além e adicionar no **package.json**,
+informações sobre o **nyc** para criar uma página web com mais algumas
+informações relevantes (buscar no package.json sobre nyc).
+Após adicionado essas informações do nyc no package.json, ao executar
+o comando para executar o coverage, será criado uma pasta chamada
+`.nyc_output` e outra `coverage`, dentro da `coverage` existe um html
+que mostra informações sobre os arquivos cobertos, também mostra onde
+nos arquivos que não foi coberto por nenhum teste.
+
+### Coverage no prepush
+Ainda no package.json, podemos falar quanto do nosso código é necessário
+estar coberto para que ele seja possível commitarmos o código, caso
+contrário, não será possível commitar e nem dar push do que foi feito
+durante o desenvolvimento, fazendo assim com que os testes sejam
+sempre criados. Também podemos adicionar mais um parâmetro no **nyc**
+dentro do package.json para fazer isso (buscar sobre nyc) 
 
 
 
